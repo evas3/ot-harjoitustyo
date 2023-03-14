@@ -1,0 +1,113 @@
+commit 44a77792dc835f054e34b62056863227756ddb7f
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 16:24:57 2023 +0200
+
+    poisto ja nimen muokkaus
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 29b3e8ece991d60ff5a7a6f028c52dcaccc5fe54
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 16:20:39 2023 +0200
+
+    uudet tiedostot
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit e1475df74a356073c551155233bd334a9a33cb49
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 16:08:30 2023 +0200
+
+    muokkaukset 1 ja 3
+
+ eka.txt    | 7 +------
+ kolmas.txt | 4 +++-
+ 2 files changed, 4 insertions(+), 7 deletions(-)
+
+commit 52adf1bec40296ab87a5014fe7f72f84336a0b64
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 16:05:00 2023 +0200
+
+    nimi muuttuu
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7624e21ef10957c7d0c51d1ac01e0fca633fea4b
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 16:03:48 2023 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 304ee86a377b699c885964c6124cbf8d82beae04
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 16:00:06 2023 +0200
+
+    toinen muokkaus
+
+ tiedosto.txt | 21 ++++++++++++++-------
+ 1 file changed, 14 insertions(+), 7 deletions(-)
+
+commit 8f0b6abd2d9d2c200b296ad03c0e8bdcda8327ae
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 15:58:08 2023 +0200
+
+    muokkaus 1
+
+ tiedosto.txt | 47 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 47 insertions(+)
+
+commit 4e3afb91dba951c4daeed87ffd226f7906dee2b2
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 15:38:44 2023 +0200
+
+    stuff hakemisto tiedostoineen
+
+ stuff/tiedosto1.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 55d3b71591c69dcf8b51b7cca1664cfdd4a714ef
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 15:37:18 2023 +0200
+
+    muokkaukset 2 ja 3
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 4be67fa6087d8d2f55c0f8e9e737f3e828d4230e
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 15:35:41 2023 +0200
+
+    kolmas lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 910fb55687b990b2de592e0787b132142a7c8585
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 15:31:43 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit abad0cd899921f97d6f2170cca3c498560540ceb
+Author: evas <evamaria.asplund@gmail.com>
+Date:   Tue Mar 14 13:29:08 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
