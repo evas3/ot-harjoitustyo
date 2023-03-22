@@ -44,7 +44,7 @@ class TestMaksukortti(unittest.TestCase):
 
         self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
 
-    def test_syo_maukkaasti_ei _vie_saldoa_negatiiviseksi(self):
+    def test_syo_maukkaasti_ei_vie_saldoa_negatiiviseksi(self):
         kortti = Maksukortti(200)
         kortti.syo_maukkaasti()
 
