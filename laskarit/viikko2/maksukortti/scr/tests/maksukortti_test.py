@@ -4,35 +4,29 @@ from maksukortti import Maksukortti
 
 class TestMaksukortti(unittest.TestCase):
     def setUp(self):
-        pass
+        self.kortti = Maksukortti(1000)
 
     def test_konstruktori_asettaa_saldon_oikein(self):
-        # alustetaan maksukortti, jossa on 10 euroa (1000 senttiä)
-        kortti = Maksukortti(1000)
-        vastaus = str(kortti)
-
-        self.assertEqual(vastaus, "Kortilla on rahaa 10.00 euroa")
+        # alustetaan maksukortti, jossa on 10 euroa (1000 senttiä)ti)
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 10.00 euroa")
 
     def test_syo_edullisesti_vahentaa_saldoa_oikein(self):
-        kortti = Maksukortti(1000)
-        kortti.syo_edullisesti()
+        self.kortti.syo_edullisesti()
 
-        self.assertEqual(str(kortti), "Kortilla on rahaa 7.50 euroa")
-
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 7.50 euroa")
 
 
     def test_syo_maukkaasti_vahentaa_saldoa_oikein(self):
-        kortti = Maksukortti(1000)
-        kortti.syo_maukkaasti()
+        self.kortti.syo_maukkaasti()
 
-        self.assertEqual(str(kortti), "Kortilla on rahaa 6.00 euroa")
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 6.00 euroa")
 
     def test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi(self):
-        kortti = Maksukortti(200)
-        kortti.syo_edullisesti()
+        self.kortti = Maksukortti(100)
+        self.kortti.syo_edullisesti()
 
 
-        self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 1.00 euroa")
 
     def test_kortille_voi_ladata_rahaa(self):
         self.kortti.lataa_rahaa(2500)
@@ -51,9 +45,9 @@ class TestMaksukortti(unittest.TestCase):
         self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
 
     def test_saldo_ei_negatiiviseksi(self):
-        kortti = Maksukortti(-100)
+        self.kortti.lataa_rahaa(-10000)
 
-        self.assertEqual(str(kortti), "Kortilla on rahaa 0.00 euroa")
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 10.00 euroa")
 
     def test_minimimaara_riittaa_edulliseen(self):
         kortti = Maksukortti(250)
