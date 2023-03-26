@@ -7,4 +7,5 @@ Täältä löytyy [komentorivi.txt](https://github.com/evas3/ot-harjoitustyo/blo
 
 # Viikko 2
 Pyydetyt testit sekä kuvankaappaus kansiossa /laskarit/viikko2
+
 Alustava [määrittelydokumentti](https://github.com/evas3/ot-harjoitustyo/blob/main/laskarit/dokumentaatio/vaatimusmaarittely.md) löytyy kansiosta /laskarit/dokumentaatio
