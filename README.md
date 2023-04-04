@@ -1,13 +1,23 @@
-# Viikko 1
-Normaalia tekstiä
-**Tämä on bold**
-*Tekstin voi myös kursivoida*
+# Reseptin arpoja
+Sovellus auttaa käyttäjää päättämään mitä hän voisi kokata tai leipoa.
+Käyttäjä kertoo halutessaan haluaako hän sovelluksen ehdottavan lounas reseptejä vai jälkiruokia.
+Resepti valitaan satunnaisesti tietokannasta käyttäjän antamien ehtojen rajoissa.
+Käyttäjä voi halutessaan pyytää myös uutta reseptiä.
 
-Täältä löytyy [komentorivi.txt](https://github.com/evas3/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt) ja täältä [gitlog.txt](https://github.com/evas3/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
 
-# Viikko 2
-Pyydetyt testit sekä [kuvankaappaus](https://github.com/evas3/ot-harjoitustyo/blob/main/laskarit/viikko2/Screenshot.png) kansiossa /laskarit/viikko2
+## Python versio
+Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhempien Python versioiden kanssa.
 
-Alustava [määrittelydokumentti](https://github.com/evas3/ot-harjoitustyo/blob/main/laskarit/dokumentaatio/vaatimusmaarittely.md) löytyy kansiosta /laskarit/dokumentaatio
 
-Myös [työaikakirjanpito](https://github.com/evas3/ot-harjoitustyo/blob/main/laskarit/dokumentaatio/tyoaikakirjanpito.md) on aloitettu ja se löytyy samaisesta dokumentaatio kansiosta.
+## Dokumentaatio
+[Vaatimusmäärittey]
+
+[Työaikakirjanpito]
+
+[Testaus]
+
+[Changelog]
+
+
+## Asennus ja käyttö
+
