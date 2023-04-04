@@ -16,7 +16,7 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 * [Testaus](https://github.com/evas3/ot-harjoitustyo/tree/main/src/tests)
 
-* [Changelog]
+* [Changelog](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
 
 ## Asennus ja käyttö
