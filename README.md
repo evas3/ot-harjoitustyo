@@ -10,11 +10,11 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 
 ## Dokumentaatio
-[Vaatimusmäärittey]
+[Vaatimusmäärittey](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
-[Työaikakirjanpito]
+[Työaikakirjanpito](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-[Testaus]
+[Testaus](https://github.com/evas3/ot-harjoitustyo/tree/main/src/tests)
 
 [Changelog]
 
