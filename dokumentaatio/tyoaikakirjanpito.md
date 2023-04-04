@@ -5,4 +5,5 @@
 
 ## Viikko 3
 3.4. ohjelman tekeminen aloitettu, aikaa meni ~1h
+
 4.4. ohjelman tekemisen aloittelua, aikaa meni ~2h
