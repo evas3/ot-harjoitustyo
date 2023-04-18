@@ -4,6 +4,7 @@ class Recipes():
     def __init__(self):
         self.meal = ["keittoresepti", "sopparesepti", "soossiresepti"]
         self.dessert = ["kakkuresepti", "piirasresepti", "tortturesepti"]
+        self.tiedosto = "ainesosasia.txt"
         print("Itse et osaa tehdä hyviä päätöksiä -minä voin päättää reseptit puolestasi")
         print("Tekeekö mieli kokata vai leipoa? Paina entteriä jos et osaa päättää")
 
@@ -22,10 +23,16 @@ class Recipes():
 
     def sweet(self):
         print(reseptit.__str__(self.dessert))
+        with open (self.tiedosto) as tiedosto:
+            for rivi in tiedosto:
+                print(rivi)
         reseptit.redo()
 
     def salty(self):
         print(reseptit.__str__(self.meal))
+        with open (self.tiedosto) as tiedosto:
+            for rivi in tiedosto:
+                print(rivi)
         reseptit.redo()
 
     def redo(self):
