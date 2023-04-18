@@ -1,49 +1,45 @@
-#Tietokanta josta hataan reseptejä -pieni määrä erilaisia reseptejä (10) -hakusanat (suolainen/makea, luokka, arviointi, hinta, aika) sekä itse tulostettava resepti
-#  Perus haku kondikseen -luokat!
-# tarkempi haku
-# käyttöliittymän parantaminen
-# user input (aika arvion korjaaminen, hinta, arvostelu)
-#lisätään reseptejä
-# suosikit toiminnallisuus palauttaa 3 parasta (tehdyt tai arvostelu tai hinta)
-"""luonne = input("1. Keksit ja pikkuleivät 2. Kakut ja piirakat 3. Muffinit ja mokkapalat, 3. Pullat ja letut 4. Muu")
-    suodatus = input("Lajittelu a) Arvostelun mukaan b) Hinnan mukaan c) Uutuus tai vanha tuttu(d)")"""
-"""luonne = input("1. Peruna, 2. Pasta, 3. Riisi, 4. Muu")
-    suodatus = input("Lajittelu a) Arvostelun mukaan b) Hinnan mukaan c) Uutuus tai vanha tuttu(d)")"""
-#hakukyselyn ohitus
+import random
 
-class Reseptit():
-
+class Recipes():
     def __init__(self):
-        pass
-    def tervetuloa(self):
-        #liibbalaaba ohjeet
-        a = input("Makeaa (m) vai Suolaista(s): ")
-        if a == "m":
-            reseptit.makeaa()
-        elif a == "s":
-            reseptit.suolaista()
-        elif a == "":
-            reseptit.haku()
+        self.meal = ["keittoresepti", "sopparesepti", "soossiresepti"]
+        self.dessert = ["kakkuresepti", "piirasresepti", "tortturesepti"]
+        print("Itse et osaa tehdä hyviä päätöksiä -minä voin päättää reseptit puolestasi")
+        print("Tekeekö mieli kokata vai leipoa? Paina entteriä jos et osaa päättää")
+
+    def welcome(self, sweet_or_salty):
+        if sweet_or_salty.lower() == "m":
+            return reseptit.sweet()
+        elif sweet_or_salty.lower() == "s":
+           return reseptit.salty()
+        elif sweet_or_salty == "":
+            choises = [reseptit.sweet, reseptit.salty]
+            return random.choice(choises)()
         else:
-            pass
-            #alusta, syöte ei vastaa od.
-    def makeaa(self):
-        pass
-    def suolaista(self):
-        pass
-    def haku(self):
-        pass
-    def palautus(self):
-        pass
+            print()
+            print("Yritetäänpä uudelleen")
+            return reseptit.welcome()
+
+    def sweet(self):
+        print(reseptit.__str__(self.dessert))
+        reseptit.redo()
+
+    def salty(self):
+        print(reseptit.__str__(self.meal))
+        reseptit.redo()
+
+    def redo(self):
+        print()
+        print("Haetko kenties jotakin muuta?")
+        again = input("Valitaanko uusi resepti? Paina y-kirjainta niin yritetään uudelleen.")
+        if again.lower() == "y":
+            reseptit.welcome()
+        print("Ole hyvä ja näkemiin!")
         
-reseptit = Reseptit()
-a = input("Makeaa (m) vai Suolaista(s): ")
-if a == "m":
-    reseptit.makeaa()
-elif a == "s":
-    reseptit.suolaista()
-elif a == "":
-    reseptit.haku()
-else:
-    pass
-    #alusta, syöte ei vastaa od
+    def __str__(self, list):
+        return random.choice(list)
+
+if __name__ ==  "__main__":
+    reseptit = Recipes()
+    sweet_or_salty = input("Makeaa (paina m-kirjainta) vai Suolaista(paina s-kirjainta): ")
+    reseptit.welcome(sweet_or_salty)
