@@ -5,10 +5,10 @@ sequenceDiagram
   participant sweet
   participant salty
   participant redo
-  main-->>welcome
-  welcome-->>sweet
-  welcome-->>salty
-  welcome-->>welcome
-  sweet-->>redo
-  salty-->>redo
+  main->>welcome
+  welcome->>sweet
+  welcome->>salty
+  welcome->>welcome
+  sweet->>redo
+  salty->>redo
 ```
