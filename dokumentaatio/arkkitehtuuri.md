@@ -5,10 +5,10 @@ sequenceDiagram
   participant sweet
   participant salty
   participant redo
-  main-->>welcome
-  welcome-->>sweet
-  welcome-->>salty
-  welcome-->>welcome
-  sweet-->>redo
-  salty-->>redo
+  main->>welcome: welcome(sweet_or_salty)
+  welcome->>sweet: sweet()
+  welcome->>salty: salty()
+  welcome->>welcome: welcome(sweet_or_salty)
+  sweet->>redo: redo()
+  salty->>redo: redo()
 ```
