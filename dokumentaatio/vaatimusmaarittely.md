@@ -5,17 +5,17 @@ Sovelluksen avulla käyttäjä voi satunnaisesti päättää mitä kokata tai le
 Käyttäjä voi itse päättää haluaako hän valmistaa jotakin suolaista vai makeaa.
 
 ## Käyttäjät
-Projektin alussa ainoastaan yksi käyttäjärooli on määritelty.
+Projektin alussa ainoastaan yksi käyttäjärooli on määritelty. -tehty
 
 ## Käyttöliittymäluonnos
-Projektin alussa käyttöliittymä on tekstipohjainen.
+Projektin alussa käyttöliittymä on tekstipohjainen. -tehty alustavasti
 
 ## Perusversion toiminnallisuudet
 Käyttäjä voi manuaalisesti lisätä reseptin sovelluksen tarjoamiin resepteihin.
 
-Käyttäjä voi sovelluksen kysymyksiin vastaamalla suodattaa saamiaan reseptejä.
+Käyttäjä voi sovelluksen kysymyksiin vastaamalla suodattaa saamiaan reseptejä. -tahty alustavasti
 
-Käyttäjä voi päätää sovellukselta uutta reseptiä annetuilla hakuehdoilla tai aloittaa suodattaa reseptejä eri tavalla.
+Käyttäjä voi päätää sovellukselta uutta reseptiä annetuilla hakuehdoilla tai aloittaa suodattaa reseptejä eri tavalla. -tehty alustavasti
 
 ## Ideoita jatkokehitykseen
  -Graafinen käyttöliittymää
