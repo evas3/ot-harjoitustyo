@@ -1,10 +1,10 @@
 import unittest
-from reseptit import Reseptit
+from recipes import Recipes
 
 
-class TestReseptit(unittest, TestCase):
-    def SetUp(self):
-        self.recipe = Recipes()
+class TestRecipes(unittest.TestCase):
+    def setUp(self):
+        self.recipes = Recipes()
 
     def test_welcome_input_m(self):
-        self.assertEqual(self.recipe.welcome("m"), reseptit.sweet())
+        self.assertEqual(self.recipes.welcome("m"), recipes.sweet())
