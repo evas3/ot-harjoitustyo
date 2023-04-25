@@ -24,3 +24,5 @@
 -Ohjelma ajettavissa "poetry run invoke start" komennon avulla
 
 -Pylint
+
+-Release
