@@ -23,6 +23,8 @@
 
 -Ohjelma ajettavissa "poetry run invoke start" komennon avulla
 
+-Reseptien printtaaminen tekstitiedostosta
+
 -Pylint
 
 -Release
