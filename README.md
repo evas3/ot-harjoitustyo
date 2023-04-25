@@ -10,6 +10,9 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 
 ## Dokumentaatio
+
+[Release 1](https://github.com/evas3/ot-harjoitustyo/releases/tag/viikko5)
+
 * [Arkkitehtuuri](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 
 * [Vaatimusmäärittey](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
