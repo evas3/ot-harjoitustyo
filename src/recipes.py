@@ -2,8 +2,12 @@ import random
 
 class Recipes():
     def __init__(self):
-        self.meal = ["/home/evas/ot-harjoitustyo/src/nuudelit.txt", "/home/evas/ot-harjoitustyo/src/keitto.txt", "/home/evas/ot-harjoitustyo/src/hampurilaiset.txt"]
-        self.dessert = ["/home/evas/ot-harjoitustyo/src/mansikkakakku.txt", "/home/evas/ot-harjoitustyo/src/mustikkapiirakka.txt", "/home/evas/ot-harjoitustyo/src/kaaretorttu.txt"]
+        self.meal = ["/home/evas/ot-harjoitustyo/src/nuudelit.txt",
+                     "/home/evas/ot-harjoitustyo/src/keitto.txt",
+                     "/home/evas/ot-harjoitustyo/src/hampurilaiset.txt"]
+        self.dessert = ["/home/evas/ot-harjoitustyo/src/mansikkakakku.txt",
+                        "/home/evas/ot-harjoitustyo/src/mustikkapiirakka.txt",
+                        "/home/evas/ot-harjoitustyo/src/kaaretorttu.txt"]
         print("Can't make good decisions? I can!")
         print("Would you like to bake or cook? Press enter if you don't know.")
 
@@ -23,14 +27,14 @@ class Recipes():
 
     def sweet(self):
         print()
-        with open(random.choice(self.dessert)) as file:
+        with open(random.choice(self.dessert), "r") as file:
             for row in file:
                 print(row)
         recepies.redo()
 
     def salty(self):
         print()
-        with open(random.choice(self.meal)) as file:
+        with open(random.choice(self.meal), "r") as file:
             for row in file:
                 print(row)
         recepies.redo()
@@ -43,7 +47,7 @@ class Recipes():
             sweet_or_salty = str(input("Bake (press 'b') or cook (press 'c'): "))
             recepies.welcome(sweet_or_salty)
         else:
-            print("OYou're welcome!")
+            print("You're welcome!")
         
 
 if __name__ ==  "__main__":
