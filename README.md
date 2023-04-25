@@ -25,4 +25,4 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 
 ## Asennus ja käyttö
-
+Ohjelma käynnistyy "poetry run invoke start" komennolla. Tämän jälkeen käyttäjä seuraa ohjelman käyttäjälle antamia ohjeita.
