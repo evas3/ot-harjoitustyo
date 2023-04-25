@@ -4,7 +4,10 @@ from recipes import Recipes
 
 class TestRecipes(unittest.TestCase):
     def setUp(self):
-        self.recipes = Recipes()
+        self.recipe = Recipes()
 
     def test_welcome_input_m(self):
-        self.assertEqual(self.recipes.welcome("m"), recipes.sweet())
+        self.assertEqual(self.recipe.welcome("m"), recipe.sweet())
+
+if __name__ == "__main__":
+    unittest.main()

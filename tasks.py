@@ -6,7 +6,7 @@ def start(ctx):
 
 @task
 def test(ctx):
-    ctx.run("python3 src/tests/resepti_test.py", pty=True)
+    ctx.run("cd src && python3 -m tests.resepti_test", pty=True)
 
 @task
 def coverage(ctx):
