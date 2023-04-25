@@ -4,7 +4,7 @@ class Recipes():
     def __init__(self):
         self.meal = ["keittoresepti", "sopparesepti", "soossiresepti"]
         self.dessert = ["kakkuresepti", "piirasresepti", "tortturesepti"]
-        self.tiedosto = "ainesosasia.txt"
+        self.tiedosto = '/home/evas/ot-harjoitustyo/src/ainesosasia.txt'
         print("Itse et osaa tehdä hyviä päätöksiä -minä voin päättää reseptit puolestasi")
         print("Tekeekö mieli kokata vai leipoa? Paina entteriä jos et osaa päättää")
 
@@ -19,18 +19,19 @@ class Recipes():
         else:
             print()
             print("Yritetäänpä uudelleen")
-            return reseptit.welcome()
+            sweet_or_salty = str(input("Makeaa (paina m-kirjainta) vai Suolaista(paina s-kirjainta): "))
+            return reseptit.welcome(sweet_or_salty)
 
     def sweet(self):
         print(reseptit.__str__(self.dessert))
-        with open (self.tiedosto) as tiedosto:
+        with open(self.tiedosto) as tiedosto:
             for rivi in tiedosto:
                 print(rivi)
         reseptit.redo()
 
     def salty(self):
         print(reseptit.__str__(self.meal))
-        with open (self.tiedosto) as tiedosto:
+        with open(self.tiedosto) as tiedosto:
             for rivi in tiedosto:
                 print(rivi)
         reseptit.redo()
@@ -40,13 +41,15 @@ class Recipes():
         print("Haetko kenties jotakin muuta?")
         again = input("Valitaanko uusi resepti? Paina y-kirjainta niin yritetään uudelleen.")
         if again.lower() == "y":
-            reseptit.welcome()
-        print("Ole hyvä ja näkemiin!")
+            sweet_or_salty = str(input("Makeaa (paina m-kirjainta) vai Suolaista(paina s-kirjainta): "))
+            reseptit.welcome(sweet_or_salty)
+        else:
+            print("Ole hyvä ja näkemiin!")
         
     def __str__(self, list):
         return random.choice(list)
 
 if __name__ ==  "__main__":
     reseptit = Recipes()
-    sweet_or_salty = input("Makeaa (paina m-kirjainta) vai Suolaista(paina s-kirjainta): ")
+    sweet_or_salty = str(input("Makeaa (paina m-kirjainta) vai Suolaista(paina s-kirjainta): "))
     reseptit.welcome(sweet_or_salty)
