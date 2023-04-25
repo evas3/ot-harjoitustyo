@@ -15,4 +15,6 @@
 25.4. poetry invoke ja virheiden korjaamista ~2h
 
 
+
+
 yht. 7h
