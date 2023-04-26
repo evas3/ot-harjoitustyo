@@ -8,14 +8,14 @@ Käyttäjä voi itse päättää haluaako hän valmistaa jotakin suolaista vai m
 Projektin alussa ainoastaan yksi käyttäjärooli on määritelty. -tehty
 
 ## Käyttöliittymäluonnos
-Projektin alussa käyttöliittymä on tekstipohjainen. -tehty alustavasti
+Projektin alussa käyttöliittymä on tekstipohjainen. -tehty
 
 ## Perusversion toiminnallisuudet
 Käyttäjä voi manuaalisesti lisätä reseptin sovelluksen tarjoamiin resepteihin.
 
-Käyttäjä voi sovelluksen kysymyksiin vastaamalla suodattaa saamiaan reseptejä. -tahty alustavasti
+Käyttäjä voi sovelluksen kysymyksiin vastaamalla suodattaa saamiaan reseptejä. -tahty
 
-Käyttäjä voi päätää sovellukselta uutta reseptiä annetuilla hakuehdoilla tai aloittaa suodattaa reseptejä eri tavalla. -tehty alustavasti
+Käyttäjä voi päätää sovellukselta uutta reseptiä annetuilla hakuehdoilla tai aloittaa suodattaa reseptejä eri tavalla. -tehty 
 
 ## Ideoita jatkokehitykseen
  -Graafinen käyttöliittymää

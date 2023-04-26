@@ -54,7 +54,10 @@ class Recipes():
             print("You're welcome!")
 
 
+
 if __name__ == "__main__":
     recepies = Recipes()
     SWEET_OR_SALTY = str(input("Bake (press 'b') or cook (press 'c'): "))
     recepies.welcome(SWEET_OR_SALTY)
+    sweet_or_salty = str(input("Bake (press 'b') or cook (press 'c'): "))
+    recepies.welcome(sweet_or_salty)

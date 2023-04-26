@@ -10,3 +10,21 @@
 -Luokkaan Recipes metodi redo jolla käyttäjä voi suorittaa ohjelman uudelleen
 
 -Luokkaan Recipes metodi __str__ joka palauttaa listan jäsenen
+
+
+## Viikko 4
+-Arkkitehtuurikaavio
+
+-Nimet englanniksi
+
+
+## Viikko 5
+-Korjattu pääohjelman toimintaa
+
+-Ohjelma ajettavissa "poetry run invoke start" komennon avulla
+
+-Reseptien printtaaminen tekstitiedostosta
+
+-Pylint
+
+-Release

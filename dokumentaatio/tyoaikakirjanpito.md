@@ -12,9 +12,9 @@
 18.4. tietokantapuolen aloittelu, aikaa meni ~1,5h
 
 ## Viikko 5
-25.4. poetry invoke ja virheiden korjaamista ~3,5h
+25.4. poetry invoke ja virheiden korjaamista ~4h
 
 
 
 
-yht. 8,5h
+yht. 9h
