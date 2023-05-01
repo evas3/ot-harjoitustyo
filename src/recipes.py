@@ -29,17 +29,27 @@ class Recipes():
 
     def sweet(self):
         print()
-        with open(random.choice(self.dessert), "r") as file:
-            for row in file:
-                print(row)
-        recepies.redo()
+        if self.dessert != []:
+            chosen_dessert = random.choice(self.dessert)
+            with open(chosen_dessert, "r") as file:
+                for row in file:
+                    print(row)
+            self.dessert.remove(chosen_dessert)
+            recepies.redo()
+        else:
+            print("No sweet options available")
 
     def salty(self):
         print()
-        with open(random.choice(self.meal), "r") as file:
-            for row in file:
-                print(row)
-        recepies.redo()
+        if self.meal != []:
+            chosen_meal = random.choice(self.meal)
+            with open(chosen_meal, "r") as file:
+                for row in file:
+                    print(row)
+            self.meal.remove(chosen_meal)
+            recepies.redo()
+        else:
+            print("No salty options available")
 
     def redo(self):
         print()
