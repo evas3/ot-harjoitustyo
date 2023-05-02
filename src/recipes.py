@@ -3,12 +3,12 @@ import random
 
 class Recipes():
     def __init__(self):
-        self.meal = ["/home/evas/ot-harjoitustyo/src/nuudelit.txt",
-                     "/home/evas/ot-harjoitustyo/src/keitto.txt",
-                     "/home/evas/ot-harjoitustyo/src/hampurilaiset.txt"]
-        self.dessert = ["/home/evas/ot-harjoitustyo/src/mansikkakakku.txt",
-                        "/home/evas/ot-harjoitustyo/src/mustikkapiirakka.txt",
-                        "/home/evas/ot-harjoitustyo/src/kaaretorttu.txt"]
+        self.meal = ["./src/reseptit/nuudelit.txt",
+                     "./src/reseptit/keitto.txt",
+                     "./src/reseptit/hampurilaiset.txt"]
+        self.dessert = ["./src/reseptit/mansikkakakku.txt",
+                        "./src/reseptit/mustikkapiirakka.txt",
+                        "./src/reseptit/kaaretorttu.txt"]
         print("Can't make good decisions? I can!")
         print("Would you like to bake or cook? Press enter if you don't know.")
 
@@ -38,6 +38,7 @@ class Recipes():
             recepies.redo()
         else:
             print("No sweet options available")
+            recepies.redo()
 
     def salty(self):
         print()
@@ -50,18 +51,22 @@ class Recipes():
             recepies.redo()
         else:
             print("No salty options available")
+            recepies.redo()
 
     def redo(self):
-        print()
-        print("Anything else?")
-        again = input(
-            "Would you like to choose another recipe? Press 'y' to try again.")
-        if again.lower() == "y":
-            sweet_or_salty = str(
-                input("Bake (press 'b') or cook (press 'c'): "))
-            recepies.welcome(sweet_or_salty)
-        else:
-            print("You're welcome!")
+        while True:
+            print()
+            print("Anything else?")
+            again = input(
+                "Would you like to choose another recipe? Press 'y' to try again.")
+            if again.lower() == "y":
+                sweet_or_salty = str(
+                    input("Bake (press 'b') or cook (press 'c'): "))
+                recepies.welcome(sweet_or_salty)
+                break
+            else:
+                print("You're welcome!")
+                break
 
 
 
@@ -69,5 +74,3 @@ if __name__ == "__main__":
     recepies = Recipes()
     SWEET_OR_SALTY = str(input("Bake (press 'b') or cook (press 'c'): "))
     recepies.welcome(SWEET_OR_SALTY)
-    sweet_or_salty = str(input("Bake (press 'b') or cook (press 'c'): "))
-    recepies.welcome(sweet_or_salty)
