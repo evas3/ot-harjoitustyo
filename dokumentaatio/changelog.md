@@ -28,3 +28,17 @@
 -Pylint
 
 -Release
+
+
+## Viikko 6
+-Dcstring
+
+-Pylint komento
+
+-Tiedostojen polut muutettu toimiviksi
+
+-Reseptit omassa kansiossaan
+
+-Graaginen käyttöliittymä alustettu
+
+-Korjattu pääohjelman toimintaa

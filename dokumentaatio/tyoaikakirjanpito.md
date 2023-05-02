@@ -14,7 +14,10 @@
 ## Viikko 5
 25.4. poetry invoke ja virheiden korjaamista ~4h
 
+## Viikko 6
+1.5. graafinen käyttöliittymä ~2h
+
+2.5. pylint, virheiden korjaamista, docstring ~4h
 
 
-
-yht. 9h
+yht. 15h
