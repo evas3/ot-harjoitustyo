@@ -21,9 +21,8 @@ class Recipes():
         window = Tk()
         window.title("What to cook")
         ui = UI(window)
-        value = ui.tklinter_welcome()
+        ui.tklinter_welcome()
         window.mainloop()
-        self.welcome(value)
 
     def welcome(self, sweet_or_salty):
         """Toivottaa käyttäjän tervetulleeksi 
@@ -33,9 +32,9 @@ class Recipes():
             sweet_or_salty: päätös kysymykseen yllä.
         """
 
-        if sweet_or_salty.lower() == 1:
+        if sweet_or_salty.lower() == "b":
             return recepies.sweet()
-        elif sweet_or_salty.lower() == 2:
+        elif sweet_or_salty.lower() == "c":
             return recepies.salty()
         elif sweet_or_salty == "":
             choises = [recepies.sweet, recepies.salty]
@@ -101,3 +100,5 @@ class Recipes():
 
 if __name__ == "__main__":
     recepies = Recipes()
+    SWEET_OR_SALTY = str(input("Bake (press 'b') or cook (press 'c'): "))
+    recepies.welcome(SWEET_OR_SALTY)

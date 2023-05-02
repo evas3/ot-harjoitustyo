@@ -23,7 +23,7 @@ class UI:
             ensimmäinen näkymä
         """
 
-        label = ttk.Label(master=self._root, text="Can't make good decisions? I can!")
+        label = ttk.Label(master=self._root, text="Can't make good decisions? I can! (ei vielä tee mitään)")
         label_2 = ttk.Label(master=self._root, text="Would you like to bake or cook?")
         
         button_sweet = ttk.Button(master=self._root, text="Makeaa", command=lambda: self._button_clicked(1))
@@ -43,7 +43,7 @@ class UI:
            sweet_or_salty: käyttäjän nappivalinta
         """
 
-        return int(sweet_or_salty)
+        pass
 
     def tklinter_continue(self):
         """Kysytään käyttäjältä haluaako jatkaa.
