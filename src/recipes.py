@@ -1,21 +1,41 @@
 import random
+from tkinter import Tk
+from graafinen_kayttoliittyma import UI
 
 
 class Recipes():
+    """Luokka jonka avulla päätetään reseptit.
+    """
+
     def __init__(self):
+        """Konstruktori luo listat resepteistä.
+        """
+
         self.meal = ["./src/reseptit/nuudelit.txt",
                      "./src/reseptit/keitto.txt",
                      "./src/reseptit/hampurilaiset.txt"]
         self.dessert = ["./src/reseptit/mansikkakakku.txt",
                         "./src/reseptit/mustikkapiirakka.txt",
                         "./src/reseptit/kaaretorttu.txt"]
-        print("Can't make good decisions? I can!")
-        print("Would you like to bake or cook? Press enter if you don't know.")
+
+        window = Tk()
+        window.title("What to cook")
+        ui = UI(window)
+        value = ui.tklinter_welcome()
+        window.mainloop()
+        self.welcome(value)
 
     def welcome(self, sweet_or_salty):
-        if sweet_or_salty.lower() == "b":
+        """Toivottaa käyttäjän tervetulleeksi 
+           ja kysyy leivotaanko vai kokataanko.
+        
+        Args:
+            sweet_or_salty: päätös kysymykseen yllä.
+        """
+
+        if sweet_or_salty.lower() == 1:
             return recepies.sweet()
-        elif sweet_or_salty.lower() == "c":
+        elif sweet_or_salty.lower() == 2:
             return recepies.salty()
         elif sweet_or_salty == "":
             choises = [recepies.sweet, recepies.salty]
@@ -28,6 +48,9 @@ class Recipes():
             return recepies.welcome(sweet_or_salty)
 
     def sweet(self):
+        """Tulostaa leivonnaisen reseptin jos on.
+        """
+
         print()
         if self.dessert != []:
             chosen_dessert = random.choice(self.dessert)
@@ -41,6 +64,9 @@ class Recipes():
             recepies.redo()
 
     def salty(self):
+        """Tulostaa ruoan reseptin jos on.
+        """
+
         print()
         if self.meal != []:
             chosen_meal = random.choice(self.meal)
@@ -54,6 +80,9 @@ class Recipes():
             recepies.redo()
 
     def redo(self):
+        """Kysyy käyttäjältä valitaanko uusi resepti
+        """
+
         while True:
             print()
             print("Anything else?")
@@ -72,5 +101,3 @@ class Recipes():
 
 if __name__ == "__main__":
     recepies = Recipes()
-    SWEET_OR_SALTY = str(input("Bake (press 'b') or cook (press 'c'): "))
-    recepies.welcome(SWEET_OR_SALTY)

@@ -1,8 +1,17 @@
 from tkinter import Tk, ttk, constants
 
 class UI:
+    """Luokka graafista käyttöliittymää varten.
+    """
+
     def __init__(self, root):
-        self.root = root
+        """Alustaa nappulat
+        
+        Args:
+            root: ttk alustusta
+        """
+
+        self._root = root
         self._entry_sweet = None
         self._entry_salty = None
         self._entry_skip = None
@@ -10,27 +19,45 @@ class UI:
         self._entry_end = None
 
     def tklinter_welcome(self):
-        label = ttk.Label(master=self._root, text="tervettuliaisliibalaaba")
+        """Tervehtii käyttäjää
+            ensimmäinen näkymä
+        """
+
+        label = ttk.Label(master=self._root, text="Can't make good decisions? I can!")
+        label_2 = ttk.Label(master=self._root, text="Would you like to bake or cook?")
         
-        button_sweet = ttk.Button(master=self._root, text="Makeaa", command=lambda: self._button_clicked("b"))
-        button_salty = ttk.Button(master=self._root, text="Suolaista", command=lambda: self._button_clicked("c"))
+        button_sweet = ttk.Button(master=self._root, text="Makeaa", command=lambda: self._button_clicked(1))
+        button_salty = ttk.Button(master=self._root, text="Suolaista", command=lambda: self._button_clicked(2))
         button_skip = ttk.Button(master=self._root, text="En tiedä", command=lambda: self._button_clicked(""))
 
         label.grid(row=0, column=0, columnspan=2)
-        button_sweet.grid(row=1, column=0)
-        button_salty.grid(row=1, column=1)
-        button_skip.grid(row=2, column=0, columnspan=2, sticky=(constants.E, constants.W))
+        label_2.grid(row=1, column=0, columnspan=2)
+        button_sweet.grid(row=2, column=0)
+        button_salty.grid(row=2, column=1)
+        button_skip.grid(row=3, column=0, columnspan=2, sticky=(constants.E, constants.W))
 
-    def button_clicked(self, sweet_or_salty):
-        value_sweet = self._entry_sweet.get()
-        value_salty = self._entry_salty.get()
-        value_skip = self._entry_skip.get()
+    def _button_clicked(self, sweet_or_salty):
+        """Käsittelee napinpainalluksen.
+        
+        Args:
+           sweet_or_salty: käyttäjän nappivalinta
+        """
+
+        return int(sweet_or_salty)
 
     def tklinter_continue(self):
+        """Kysytään käyttäjältä haluaako jatkaa.
+        """
         pass
 
-    def second_choice(self, yes_or_no):
+    def second_choice(self):
+        """Jos käyttäjä jatkaa.
+        """
+
         pass
 
     def end(self):
+        """Jos käyttäjä ei jatka.
+        """
+
         pass
