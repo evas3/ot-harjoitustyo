@@ -7,6 +7,7 @@ class Recipes():
     """Luokka jonka avulla päätetään reseptit.
     """
 
+
     def __init__(self):
         """Konstruktori luo listat resepteistä.
         """
@@ -18,87 +19,75 @@ class Recipes():
                         "./src/reseptit/mustikkapiirakka.txt",
                         "./src/reseptit/kaaretorttu.txt"]
 
-        window = Tk()
-        window.title("What to cook")
-        ui = UI(window)
-        ui.tklinter_welcome()
-        window.mainloop()
 
     def welcome(self, sweet_or_salty):
         """Toivottaa käyttäjän tervetulleeksi 
-           ja kysyy leivotaanko vai kokataanko.
+           määrittää valitaanko suolainen vai makea resepti.
         
         Args:
             sweet_or_salty: päätös kysymykseen yllä.
         """
-
-        if sweet_or_salty.lower() == "b":
+        
+        if sweet_or_salty == 1:
             return recepies.sweet()
-        elif sweet_or_salty.lower() == "c":
+        elif sweet_or_salty == 2:
             return recepies.salty()
-        elif sweet_or_salty == "":
+        else:
             choises = [recepies.sweet, recepies.salty]
             return random.choice(choises)()
-        else:
-            print()
-            print("Try that again")
-            sweet_or_salty = str(
-                input("Bake (press 'b') or cook (press 'c'): "))
-            return recepies.welcome(sweet_or_salty)
+    
 
     def sweet(self):
-        """Tulostaa leivonnaisen reseptin jos on.
+        """Tulostaa leivonnaisen reseptin jos se on.
+           Vanhaa reseptiä ei enää ehdoteta.
         """
 
-        print()
         if self.dessert != []:
             chosen_dessert = random.choice(self.dessert)
-            with open(chosen_dessert, "r") as file:
-                for row in file:
-                    print(row)
+            ui._show_recipe_view(chosen_dessert)
             self.dessert.remove(chosen_dessert)
-            recepies.redo()
+            recepies.redo("")
         else:
-            print("No sweet options available")
-            recepies.redo()
+            recepies.redo("sweet")
+
 
     def salty(self):
         """Tulostaa ruoan reseptin jos on.
+           Vanhaa reseptiä ei enää ehdoteta.
         """
 
         print()
         if self.meal != []:
             chosen_meal = random.choice(self.meal)
-            with open(chosen_meal, "r") as file:
-                for row in file:
-                    print(row)
+            ui._show_recipe_view(chosen_meal)
             self.meal.remove(chosen_meal)
-            recepies.redo()
+            recepies.redo("")
         else:
-            print("No salty options available")
-            recepies.redo()
+            recepies.redo("salty")
 
-    def redo(self):
-        """Kysyy käyttäjältä valitaanko uusi resepti
+
+    def redo(self, doable):
+        """Kysyy käyttäjältä valitaanko uusi resepti.
+
+        Args:
+            doable: kertoo jos reseptit ovat loppuneet
         """
 
-        while True:
-            print()
-            print("Anything else?")
-            again = input(
-                "Would you like to choose another recipe? Press 'y' to try again.")
-            if again.lower() == "y":
-                sweet_or_salty = str(
-                    input("Bake (press 'b') or cook (press 'c'): "))
-                recepies.welcome(sweet_or_salty)
-                break
-            else:
-                print("You're welcome!")
-                break
+        quit_if_0 = ui._show_redo_view(doable)
+        if quit_if_0 == 0:
+            window.destroy()
+            print("You're welcome!")
+        else:
+            sweet_or_salty = ui.tklinter_welcome()
+            recepies.welcome(sweet_or_salty)
 
 
 
 if __name__ == "__main__":
     recepies = Recipes()
-    SWEET_OR_SALTY = str(input("Bake (press 'b') or cook (press 'c'): "))
-    recepies.welcome(SWEET_OR_SALTY)
+    window = Tk()
+    window.title("What to cook?")
+    ui = UI(window)
+    sweet_or_salty = ui.tklinter_welcome()
+    recepies.welcome(sweet_or_salty)
+    window.mainloop() 

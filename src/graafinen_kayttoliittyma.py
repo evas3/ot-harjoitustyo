@@ -1,60 +1,95 @@
-from tkinter import Tk, ttk, constants
+from recipe_view import RecipeView
+from welcome_view import WelcomeView
+from redo_view import RedoVieW
 
 class UI:
     """Luokka graafista käyttöliittymää varten.
     """
 
+
     def __init__(self, root):
-        """Alustaa nappulat
+        """Alustaa näkymän.
         
         Args:
             root: ttk alustusta
         """
 
         self._root = root
-        self._entry_sweet = None
-        self._entry_salty = None
-        self._entry_skip = None
-        self._entry_continue = None
-        self._entry_end = None
+        self._current_view = None
+
 
     def tklinter_welcome(self):
-        """Tervehtii käyttäjää
-            ensimmäinen näkymä
+        """Kutsuu ensimmäistä näkymää.
         """
 
-        label = ttk.Label(master=self._root, text="Can't make good decisions? I can! (ei vielä tee mitään)")
-        label_2 = ttk.Label(master=self._root, text="Would you like to bake or cook?")
-        
-        button_sweet = ttk.Button(master=self._root, text="Makeaa", command=lambda: self._button_clicked(1))
-        button_salty = ttk.Button(master=self._root, text="Suolaista", command=lambda: self._button_clicked(2))
-        button_skip = ttk.Button(master=self._root, text="En tiedä", command=lambda: self._button_clicked(""))
+        return self._show_welcome_view()
 
-        label.grid(row=0, column=0, columnspan=2)
-        label_2.grid(row=1, column=0, columnspan=2)
-        button_sweet.grid(row=2, column=0)
-        button_salty.grid(row=2, column=1)
-        button_skip.grid(row=3, column=0, columnspan=2, sticky=(constants.E, constants.W))
 
-    def _button_clicked(self, sweet_or_salty):
-        """Käsittelee napinpainalluksen.
+    def _show_welcome_view(self):
+        """Ensimmäinen näkymä
+           tervehtii käyttäjää.
+
+        Returns:
+           Nappulavalinnan arvon.
+        """
+
+        self._hide_current_view()
+
+        self._current_view = WelcomeView(self._root)
+        self._current_view.pack()
+
+        self._current_view.button_ok.wait_variable(self._current_view.choise)
+        return self._current_view.choise.get()
+
+
+    def _handle_recipe_view(self):
+        """Kutsuu reseptinäkymää.
+        """
+
+        self._show_recipe_view()
+
+
+    def _hide_current_view(self):
+        """Piilottaa nykyisen näkymän
+        """
+
+        if self._current_view:
+            self._current_view.destroy()
+
+        self._current_view = None
+
+
+    def _show_recipe_view(self, file):
+        """Näyttää reseptinäkymän
+
+        Args:
+           file: luettava tiedosto
+        """
+
+        self._hide_current_view()
+
+        self._current_view = RecipeView(self._root, file)
+        self._current_view.pack()
+
+
+    def _show_redo_view(self, doable):
+        """Näyttää 'yritetäänkö uudelleen' näkymän.
         
         Args:
-           sweet_or_salty: käyttäjän nappivalinta
+           doable: kertoo jos reseptit ovat loppuneet
+
+        Returns:
+           Nappulavalinnan arvo.
         """
 
-        pass
+        self._hide_current_view()
 
-    def tklinter_continue(self):
-        """Kysytään käyttäjältä haluaako jatkaa.
-        """
-        pass
+        self._current_view = RedoVieW(self._root, doable)
+        self._current_view.pack()
 
-    def second_choice(self):
-        """Jos käyttäjä jatkaa.
-        """
+        self._current_view.button_ok2.wait_variable(self._current_view.choise2)
+        return self._current_view.choise2.get()
 
-        pass
 
     def end(self):
         """Jos käyttäjä ei jatka.
