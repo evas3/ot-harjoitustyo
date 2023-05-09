@@ -18,6 +18,7 @@ class Recipes():
         self.dessert = ["./src/reseptit/mansikkakakku.txt",
                         "./src/reseptit/mustikkapiirakka.txt",
                         "./src/reseptit/kaaretorttu.txt"]
+        self.test_indicator = 0
 
 
     def welcome(self, sweet_or_salty):
@@ -29,11 +30,13 @@ class Recipes():
         """
         
         if sweet_or_salty == 1:
-            return recepies.sweet()
+            self.test_indicator = 1
+            recipe.sweet()
         elif sweet_or_salty == 2:
-            return recepies.salty()
+            self.test_indicator = 2
+            recipe.salty()
         else:
-            choises = [recepies.sweet, recepies.salty]
+            choises = [recipe.sweet, recipe.salty]
             return random.choice(choises)()
     
 
@@ -43,12 +46,14 @@ class Recipes():
         """
 
         if self.dessert != []:
+            self.test_indicator = 3.1
             chosen_dessert = random.choice(self.dessert)
             ui._show_recipe_view(chosen_dessert)
             self.dessert.remove(chosen_dessert)
-            recepies.redo("")
+            recipe.redo("")
         else:
-            recepies.redo("sweet")
+            self.test_indicator = 3.2
+            recipe.redo("sweet")
 
 
     def salty(self):
@@ -58,12 +63,14 @@ class Recipes():
 
         print()
         if self.meal != []:
+            self.test_indicator = 3.3
             chosen_meal = random.choice(self.meal)
             ui._show_recipe_view(chosen_meal)
             self.meal.remove(chosen_meal)
-            recepies.redo("")
+            recipe.redo("")
         else:
-            recepies.redo("salty")
+            self.test_indicator = 3.4
+            recipe.redo("salty")
 
 
     def redo(self, doable):
@@ -76,18 +83,21 @@ class Recipes():
         quit_if_0 = ui._show_redo_view(doable)
         if quit_if_0 == 0:
             window.destroy()
+            print()
             print("You're welcome!")
+            return "quit"
         else:
             sweet_or_salty = ui.tklinter_welcome()
-            recepies.welcome(sweet_or_salty)
+            return recipe.welcome(sweet_or_salty)
+
 
 
 
 if __name__ == "__main__":
-    recepies = Recipes()
+    recipe = Recipes()
     window = Tk()
     window.title("What to cook?")
     ui = UI(window)
     sweet_or_salty = ui.tklinter_welcome()
-    recepies.welcome(sweet_or_salty)
+    recipe.welcome(sweet_or_salty)
     window.mainloop() 

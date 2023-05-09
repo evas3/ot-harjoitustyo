@@ -1,6 +1,7 @@
 from recipe_view import RecipeView
 from welcome_view import WelcomeView
 from redo_view import RedoVieW
+from tkinter import messagebox
 
 class UI:
     """Luokka graafista käyttöliittymää varten.
@@ -71,6 +72,8 @@ class UI:
         self._current_view = RecipeView(self._root, file)
         self._current_view.pack()
 
+        self._current_view.button_add.wait_variable(self._current_view.add)
+
 
     def _show_redo_view(self, doable):
         """Näyttää 'yritetäänkö uudelleen' näkymän.
@@ -89,10 +92,3 @@ class UI:
 
         self._current_view.button_ok2.wait_variable(self._current_view.choise2)
         return self._current_view.choise2.get()
-
-
-    def end(self):
-        """Jos käyttäjä ei jatka.
-        """
-
-        pass
