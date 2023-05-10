@@ -1,11 +1,13 @@
 # Käyttöohje
-Projektin viimeisimmän version saa ladattua täältä: [Release] ()
+Projektin viimeisimmän version saa ladattua täältä: [Release]()
 
 ## Asennus ja käyttö
 Käyttäjän tulee ensin asentaa vaaditut riippuvuudet käyttäen seuraavaa komentoa:
+
 	poetry install
 
 Ohjelma käynnistyy seuraavalla komennolla:
+
 	poetry run invoke start
 
 
