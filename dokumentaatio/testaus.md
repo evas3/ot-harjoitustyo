@@ -3,4 +3,4 @@ Ohjelmaa on testattu automatisoidusti unittestin avulla ja manuaalisesti.
 
 
 
-Unittest testien toiminta on tällä hetkellä puutteellista, testikattavuus on huono.
+Unittest testien toiminta on tällä hetkellä puutteellista, testikattavuus on huono eivätkä kaikki testit toimi.
