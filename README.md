@@ -11,7 +11,7 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 ## Dokumentaatio
 
-* [Release]()
+* [Release](https://github.com/evas3/ot-harjoitustyo/releases/tag/finalrelease)
 
 * [Käyttöohje](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/kayttoohje.md)
 
