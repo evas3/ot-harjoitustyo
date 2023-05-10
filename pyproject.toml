@@ -8,8 +8,8 @@ packages = [{include = "ot_harjoitustyo"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-cowsay = "^5.0"
 invoke = "^2.0.0"
+pytest = "^7.3.1"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -31,7 +31,7 @@
 
 
 ## Viikko 6
--Dcstring
+-Docstring
 
 -Pylint komento
 
@@ -42,3 +42,15 @@
 -Graaginen käyttöliittymä alustettu
 
 -Korjattu pääohjelman toimintaa
+
+
+## Viikko 7
+-Testit voi ajaa "poetry run invoke test" komennolla
+
+-Graafinen käyttöliittymä saatettu valmiiksi
+
+-Palautettuun reseptiin voi lisätä oman huomion
+
+-Lopullinen release
+
+-Pylint virheitä korjattu

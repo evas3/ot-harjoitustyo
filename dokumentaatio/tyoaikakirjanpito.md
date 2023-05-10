@@ -20,4 +20,17 @@
 2.5. pylint, virheiden korjaamista, docstring ~4h
 
 
-yht. 15h
+## Viikko 7
+7.5. graafinen käyttöliittymä ~1h
+
+8.5. graafinen käyttöliittymä ~4h
+
+9.5. graafinen käyttöliittymä ~4h
+
+10.5. graafinen käyttöliittymä ~2h
+
+11.5. pylint ja dokumentaatio ~1h
+
+
+
+yht. 27h

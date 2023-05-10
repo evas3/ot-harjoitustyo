@@ -7,7 +7,6 @@ class Recipes():
     """Luokka jonka avulla päätetään reseptit.
     """
 
-
     def __init__(self):
         """Konstruktori luo listat resepteistä.
         """
@@ -18,43 +17,52 @@ class Recipes():
         self.dessert = ["./src/reseptit/mansikkakakku.txt",
                         "./src/reseptit/mustikkapiirakka.txt",
                         "./src/reseptit/kaaretorttu.txt"]
-        self.test_indicator = 0
+        self._test_indicator = 0
 
+
+    def main(self):
+        """Luo tkinter ikkunan
+        """
+        self.window = Tk()
+        self.ui_window = UI(self.window)
+
+        self.window.title("What to cook?")
+        sweet_or_salty = self.ui_window.tklinter_welcome()
+        self.welcome(sweet_or_salty)
+        self.window.mainloop()
 
     def welcome(self, sweet_or_salty):
         """Toivottaa käyttäjän tervetulleeksi 
            määrittää valitaanko suolainen vai makea resepti.
-        
+
         Args:
             sweet_or_salty: päätös kysymykseen yllä.
         """
-        
+
         if sweet_or_salty == 1:
-            self.test_indicator = 1
-            recipe.sweet()
+            self._test_indicator = 1
+            self.sweet()
         elif sweet_or_salty == 2:
-            self.test_indicator = 2
-            recipe.salty()
+            self._test_indicator = 2
+            self.salty()
         else:
-            choises = [recipe.sweet, recipe.salty]
-            return random.choice(choises)()
-    
+            choises = [self.sweet, self.salty]
+            random.choice(choises)()
 
     def sweet(self):
         """Tulostaa leivonnaisen reseptin jos se on.
            Vanhaa reseptiä ei enää ehdoteta.
         """
 
-        if self.dessert != []:
-            self.test_indicator = 3.1
+        if self.dessert:
+            self._test_indicator = 3.1
             chosen_dessert = random.choice(self.dessert)
-            ui._show_recipe_view(chosen_dessert)
+            self.ui_window.show_recipe_view(chosen_dessert)
             self.dessert.remove(chosen_dessert)
-            recipe.redo("")
+            self.redo("")
         else:
-            self.test_indicator = 3.2
-            recipe.redo("sweet")
-
+            self._test_indicator = 3.2
+            self.redo("sweet")
 
     def salty(self):
         """Tulostaa ruoan reseptin jos on.
@@ -62,16 +70,15 @@ class Recipes():
         """
 
         print()
-        if self.meal != []:
-            self.test_indicator = 3.3
+        if self.meal:
+            self._test_indicator = 3.3
             chosen_meal = random.choice(self.meal)
-            ui._show_recipe_view(chosen_meal)
+            self.ui_window.show_recipe_view(chosen_meal)
             self.meal.remove(chosen_meal)
-            recipe.redo("")
+            self.redo("")
         else:
-            self.test_indicator = 3.4
-            recipe.redo("salty")
-
+            self._test_indicator = 3.4
+            self.redo("salty")
 
     def redo(self, doable):
         """Kysyy käyttäjältä valitaanko uusi resepti.
@@ -80,24 +87,17 @@ class Recipes():
             doable: kertoo jos reseptit ovat loppuneet
         """
 
-        quit_if_0 = ui._show_redo_view(doable)
+        quit_if_0 = self.ui_window.show_redo_view(doable)
         if quit_if_0 == 0:
-            window.destroy()
+            self.window.destroy()
             print()
             print("You're welcome!")
             return "quit"
-        else:
-            sweet_or_salty = ui.tklinter_welcome()
-            return recipe.welcome(sweet_or_salty)
 
-
+        sweet_or_salty = self.ui_window.tklinter_welcome()
+        return self.welcome(sweet_or_salty)
 
 
 if __name__ == "__main__":
-    recipe = Recipes()
-    window = Tk()
-    window.title("What to cook?")
-    ui = UI(window)
-    sweet_or_salty = ui.tklinter_welcome()
-    recipe.welcome(sweet_or_salty)
-    window.mainloop() 
+    recipes = Recipes()
+    recipes.main()

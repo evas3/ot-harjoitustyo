@@ -1,16 +1,15 @@
 from recipe_view import RecipeView
 from welcome_view import WelcomeView
 from redo_view import RedoVieW
-from tkinter import messagebox
+
 
 class UI:
     """Luokka graafista käyttöliittymää varten.
     """
 
-
     def __init__(self, root):
         """Alustaa näkymän.
-        
+
         Args:
             root: ttk alustusta
         """
@@ -18,13 +17,11 @@ class UI:
         self._root = root
         self._current_view = None
 
-
     def tklinter_welcome(self):
         """Kutsuu ensimmäistä näkymää.
         """
 
         return self._show_welcome_view()
-
 
     def _show_welcome_view(self):
         """Ensimmäinen näkymä
@@ -42,14 +39,6 @@ class UI:
         self._current_view.button_ok.wait_variable(self._current_view.choise)
         return self._current_view.choise.get()
 
-
-    def _handle_recipe_view(self):
-        """Kutsuu reseptinäkymää.
-        """
-
-        self._show_recipe_view()
-
-
     def _hide_current_view(self):
         """Piilottaa nykyisen näkymän
         """
@@ -59,8 +48,7 @@ class UI:
 
         self._current_view = None
 
-
-    def _show_recipe_view(self, file):
+    def show_recipe_view(self, file):
         """Näyttää reseptinäkymän
 
         Args:
@@ -74,10 +62,9 @@ class UI:
 
         self._current_view.button_add.wait_variable(self._current_view.add)
 
-
-    def _show_redo_view(self, doable):
+    def show_redo_view(self, doable):
         """Näyttää 'yritetäänkö uudelleen' näkymän.
-        
+
         Args:
            doable: kertoo jos reseptit ovat loppuneet
 
