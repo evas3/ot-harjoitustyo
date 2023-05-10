@@ -1,5 +1,5 @@
 # Käyttöohje
-Projektin viimeisimmän version saa ladattua täältä: [Release]()
+Projektin viimeisimmän version saa ladattua täältä: [Release](https://github.com/evas3/ot-harjoitustyo/releases/tag/finalrelease)
 
 ## Asennus ja käyttö
 Käyttäjän tulee ensin asentaa vaaditut riippuvuudet käyttäen seuraavaa komentoa:
