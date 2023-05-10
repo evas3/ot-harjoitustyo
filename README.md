@@ -2,7 +2,7 @@
 Sovellus auttaa käyttäjää päättämään mitä hän voisi kokata tai leipoa.
 Käyttäjä kertoo halutessaan haluaako hän sovelluksen ehdottavan lounas reseptejä vai jälkiruokia.
 Resepti valitaan satunnaisesta tiedoston käyttäjän antamien ehtojen rajoissa.
-Käyttäjä voi halutessaan pyytää myös uutta reseptiä.
+Käyttäjä voi halutessaan pyytää myös uutta reseptiä ja lisätä annetun reseptin loppuun oman huomautuksensa.
 
 
 ## Python versio
@@ -44,7 +44,7 @@ Testien suoritus seuraavalla komennolla:
 
 	poetry run invoke test
 
-Testikattavuusraportin generointi htmlcov-hakemistoon onnistuu komennolla
+Testikattavuusraportin generointi htmlcov-hakemistoon onnistuu komennolla:
 
 	poetry run invoke coverage-report
 
