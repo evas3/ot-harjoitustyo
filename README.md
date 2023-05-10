@@ -13,7 +13,7 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 * [Release]()
 
-* [Käyttöohje]()
+* [Käyttöohje](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/kayttoohje.md)
 
 * [Arkkitehtuuri](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 
@@ -21,16 +21,18 @@ Sovellus on testattu Python-versiolla 3.8 eikä se välttämättä toimi vanhemp
 
 * [Työaikakirjanpito](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-* [Testaus]()
+* [Testaus](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/testaus.md)
 
 * [Changelog](https://github.com/evas3/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
 
 ## Asennus ja käyttö
 Käyttäjän tulee ensin asentaa vaaditut riippuvuudet käyttäen seuraavaa komentoa:
+
 	poetry install
 
 Ohjelma käynnistyy seuraavalla komennolla:
+
 	poetry run invoke start
 
 Tämän jälkeen käyttäjä seuraa ohjelman käyttäjälle antamia ohjeita.
@@ -39,10 +41,13 @@ Ohjelmaa käytetään graafisen käyttöliittymän kautta. Käyttäjä siis pain
 
 ## Muut komentorivikomennot
 Testien suoritus seuraavalla komennolla:
+
 	poetry run invoke test
 
 Testikattavuusraportin generointi htmlcov-hakemistoon onnistuu komennolla
+
 	poetry run invoke coverage-report
 
 Pylint määritelmien tarkastaminen toimii seuraavalla komennolla:
+
 	poetry run invoke lint
